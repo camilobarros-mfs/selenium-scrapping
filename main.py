@@ -1,17 +1,20 @@
-# This is a sample Python script.
-import selenium
+import time
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+from selenium import webdriver
+from selenium.webdriver import Keys
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+driver.get('https://www.techwithtim.net/')
+print(driver.title)
 
+search = driver.find_element(By.NAME, 's')
+search.send_keys("test")
+search.send_keys(Keys.RETURN)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+time.sleep(5)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+driver.quit()
