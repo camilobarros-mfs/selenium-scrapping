@@ -45,6 +45,7 @@ driver.get('https://www.google.com/')
 from now on your driver object will contain a copy of the full HTML code inside the requested website.
 
 4- With this setup you can look and interact with any html element using the find_element as is showed on the following code
+
 ![img.png](img.png)
 ```html
 <div id="inputWrapper">
