@@ -12,9 +12,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 from src.constants import FACETEC_DASHBOARD, USERNAME, PASSWORD
 
-options = Options()
-options.add_argument("--start-maximized")
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 driver.get(FACETEC_DASHBOARD)
 button = driver.find_element(By.ID, 'details-button')
 button.click()
